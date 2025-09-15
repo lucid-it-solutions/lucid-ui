@@ -1,3 +1,4 @@
+"use client";
 import { FormControl, FormField, FormItem } from "@/components/ui/form"
 import { cn } from "@/lib/utils"
 import React, { InputHTMLAttributes } from "react"

@@ -1,3 +1,4 @@
+"use client";
 import React, { InputHTMLAttributes } from "react";
 import styles from "./index2.module.scss";
 import { cn } from "@/lib/utils";
