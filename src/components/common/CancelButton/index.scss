@@ -1,0 +1,18 @@
+.cancelButton {
+  // width: 5.5rem;
+  padding: 0.6rem;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 0.75rem;
+  cursor: pointer;
+  color: #0e4c64;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+
+  @media (max-width: 648px) {
+    & :nth-child(2) {
+      display: none;
+    }
+  }
+}

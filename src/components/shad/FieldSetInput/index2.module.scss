@@ -1,0 +1,308 @@
+.fieldset {
+  // border: solid thin lightgray;
+  // border-radius: 3px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  flex: unset !important;
+
+  &>legend {
+    font-size: 0.75rem;
+    // color: var(--lightgray);
+    margin: 0 10px;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  &>input {
+    border: none;
+    outline: none;
+    width: calc(100% - 20px);
+    padding: 5px 10px 7.5px 10px;
+    font-size: 1rem;
+    background-color: transparent;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:disabled {
+      // background-color: white;
+
+      &::-webkit-input-placeholder {
+        // color: white;
+      }
+    }
+  }
+
+  &>textarea {
+    border: none;
+    outline: none;
+    width: calc(100% - 20px);
+    padding: 5px 10px 7.5px 10px;
+    font-size: 1rem;
+    resize: none;
+    background-color: transparent;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:disabled {
+
+      // background-color: transparent;
+      &::-webkit-input-placeholder {
+        // color: white;
+      }
+    }
+  }
+
+  &:has(textarea:disabled) {
+    background-color: transparent;
+
+    border: none;
+
+    & legend::after {
+      content: ":";
+      padding-left: 1px;
+    }
+  }
+
+  &:has(input:disabled) {
+    // background-color: white;
+    background-color: rgb(233, 233, 233);
+
+
+    & legend::after {
+      content: ":";
+      padding-left: 1px;
+    }
+
+    & legend {
+      //margin: 0;
+      color: rgb(178, 178, 178);
+    }
+
+    & input {
+      //padding-inline: 0;
+    }
+  }
+}
+
+.longLegend {
+  font-size: 0.75rem;
+  // color: var(--lightgray);
+  margin: 0 0px !important;
+  padding: 0;
+  background-color: transparent;
+}
+
+.fieldset:is([input-type="checkbox"]) {
+  position: relative;
+  border: none;
+  padding: 5px 0;
+
+  &>legend {
+    // color: var(--black);
+  }
+
+  &[data-disabled="true"] {
+    &>legend {
+      //margin: 0;
+
+      &::after {
+        content: ":";
+        padding-left: 1px;
+      }
+    }
+  }
+}
+
+.toggleContainer {
+  display: flex;
+  border-radius: 3px;
+  width: calc(10rem + 4px);
+  position: relative;
+
+  &>span {
+    min-width: 5rem;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 0;
+    cursor: pointer;
+    border: solid 1px lightgray;
+    color: lightgray;
+
+    &:first-child {
+      border-radius: 3px 0 0 3px;
+    }
+
+    &:nth-child(2) {
+      border-radius: 0 3px 3px 0;
+    }
+
+    &[data-toggled="true"] {
+      background-color: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    z-index: 1;
+    z-index: unset;
+
+    &>span {
+      position: relative;
+    }
+  }
+
+  &:has(.marker[data-toggled="true"])>span:first-child {
+    z-index: 3;
+    z-index: unset;
+    border-color: var(--primary-color);
+    color: white;
+    transition:
+      border-color 0s 500ms,
+      z-index 0s 500ms,
+      color 500ms 0s;
+  }
+
+  &:has(.marker[data-toggled="false"])>span:nth-child(2) {
+    z-index: 3;
+    z-index: unset;
+    border-color: var(--primary-color);
+    color: white;
+    transition:
+      border-color 0s 500ms,
+      z-index 0s 500ms,
+      color 500ms 0s;
+  }
+
+  &[data-disabled="true"] {
+    &> :not(.disabledLabel) {
+      display: none;
+    }
+
+    /*&:has(.marker[data-toggled="true"])::after {
+      padding-left: 10px;
+      content: "YES";
+    }
+
+    &:has(.marker[data-toggled="false"])::after {
+      padding-left: 10px;
+      content: "NO";
+    }*/
+  }
+}
+
+.disabledLabel {
+  padding-left: 10px;
+}
+
+.marker {
+  position: absolute;
+  min-width: calc(5rem + 2px);
+  height: 100%;
+  background-color: var(--primary-color);
+  z-index: 2;
+  z-index: unset;
+  transition: right 500ms;
+
+  /*&::after {
+    color: white;
+    position: absolute;
+    width: calc(5rem + 2px);
+    height: 100%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }*/
+  &>span {
+    color: white;
+    position: absolute;
+    width: calc(5rem + 2px);
+    height: 100%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  /*&[data-toggled="true"]::after {
+    content: "YES";
+  }
+
+  &[data-toggled="false"]::after {
+    content: "NO";
+  }*/
+
+  &:is([data-toggled="false"], :not([data-toggled])) {
+    right: 0;
+    border-radius: 0 3px 3px 0;
+  }
+
+  &:is([data-toggled="true"]) {
+    right: calc(100% - calc(5rem + 2px));
+    border-radius: 3px 0 0 3px;
+  }
+}
+
+//custom disabled
+.fieldsetCustom {
+  border: solid thin lightgray;
+  border-radius: 3px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  flex: unset !important;
+  // background-color: ##f1f7fd !important;
+
+  &>legend {
+    font-size: 0.75rem;
+    color: var(--lightgray);
+    margin: 0 10px;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  &>input {
+    border: none;
+    outline: none;
+    width: calc(100% - 20px);
+    padding: 5px 10px 7.5px 10px;
+    font-size: 1rem;
+    background-color: #e9eff6 !important;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:disabled {
+      background-color: #e9eff6 !important;
+
+      &::-webkit-input-placeholder {
+        color: transparent;
+      }
+    }
+  }
+
+  &:has(input:disabled) {
+    background-color: #e9eff6 !important;
+
+    & legend::after {
+      content: ":";
+      padding-left: 1px;
+    }
+
+    & legend {
+      //margin: 0;
+    }
+
+    & input {
+      //padding-inline: 0;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.labelContentContainer {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 5px 1rem;
+  gap: 1rem;
+  min-width: 9rem;
+  height: fit-content;
+  border-left: solid thin lightgray;
+}
+
+.labelContentContainerHeader {
+  font-weight: 600;
+  color: var(--light-primary-color);
+}

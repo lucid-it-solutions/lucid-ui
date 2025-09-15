@@ -1,0 +1,137 @@
+@import url("./variables.css");
+
+
+
+@layer base {
+  :root {
+    --background: hsl(0, 0%, 100%);
+    --foreground: #0c0a09;
+    --card: #ffffff;
+    --card-foreground: #0c0a09;
+    --popover: #ffffff;
+    --popover-foreground: #0c0a09;
+    --primary: #052a38;
+    --primary-foreground: #052a38;
+    --secondary: #0e4c64;
+    --secondary-foreground: #0e4c64;
+    --muted: #a9a7a7;
+    --muted-foreground: #ffffff;
+    --accent: #eeeeee;
+    --accent-foreground: #ffffff;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: #cccccc;
+    --light-border: #cccccc;
+    --input: #a9a7a7;
+    --ring: #17f92d;
+    --radius: 0.5rem;
+    --orange: #ea8b25;
+  }
+
+  .dark {
+    // --background: 222.2 84% 4.9%;
+    // --background: 224 71.4% 4.1%;
+    --background: #03151c;
+    --foreground: #ffffff;
+    --card: #0c0a09;
+    --card-foreground: #f8f8f7;
+    --popover: #052a38;
+    --popover-foreground: #f8f8f7;
+    --primary: #052a38;
+    --primary-foreground: #f8f8f7;
+    --secondary: #0e4c64;
+    --secondary-foreground: #f8f8f7;
+    --muted: #a9a7a7;
+    --muted-foreground: #a9a7a7;
+    --accent: #031922;
+    --accent-foreground: #9fb7c1;
+    --destructive: #7f1d1d;
+    --destructive-foreground: #f8f8f7;
+    --border: #a9a7a7;
+    --light-border: #052a38;
+    --input: #a9a7a7;
+    --ring: #17f92d;
+    --orange: #ea8b25;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .border-test1 {
+    border: solid 2px red;
+  }
+}
+
+html,
+body {
+  font-family: var(--font-montserrat);
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  margin: 0 !important;
+  // background-color: var(--page-color);
+  overflow-x: hidden;
+
+  &>* {
+    padding: 0 var(--content-margin-default);
+    max-width: var(--max-screen-width);
+  }
+
+  &>[data-radix-popper-content-wrapper] {
+    padding: 0 0 !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+main {
+  min-height: 100vh;
+  height: auto;
+  position: relative;
+
+  @media (min-height: 1200px) {
+    min-height: auto;
+    height: auto;
+    max-height: 1200px;
+  }
+}
+
+*,
+*::after,
+*::before {
+  font-family: var(--font-montserrat);
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+}
+
+input {
+  color: var(--black);
+}

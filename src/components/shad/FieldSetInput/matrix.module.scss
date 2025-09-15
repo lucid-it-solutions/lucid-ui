@@ -1,0 +1,93 @@
+ 
+  $input-color: var(--black);
+  $input-border: var(--light-primary-color);
+  $input-background: var(--page-color);
+  $input-placeholder: var(--lightgray);
+
+  $input-border-focus: var(--light-primary-color);
+
+  $group-color: var(--page-color);
+  $group-border: var(--light-primary-color);
+  $group-background: var(--light-primary-color);
+
+  $group-color-focus: var(--page-color);
+  $group-border-focus: var(--light-primary-color);
+  $group-background-focus: var(--light-primary-color);
+
+
+.formField {
+  display: block;
+  width: 100%;
+  padding: 5px 5px;
+  line-height: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  //   color: var(--input-color);
+  //   border: 1px solid var(--input-border);
+  //   background: var(--input-background);
+  transition: border 0.3s ease;
+  &::placeholder {
+    color: var(--input-placeholder);
+  }
+  &:focus {
+    outline: none;
+    border-color: var(--input-border-focus);
+  }
+}
+
+.formGroup {
+  position: relative;
+  display: flex;
+  height: 25px;
+  margin-bottom: 5px;
+  width: 100%;
+
+
+  & > span,
+  .formField {
+    white-space: nowrap;
+    display: block;
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+    &:first-child {
+      border-radius: 2px 0 0 2px;
+    }
+    &:last-child {
+      border-radius: 0 2px 2px 0;
+    }
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+  }
+  .formField {
+    position: relative;
+    z-index: 1;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  & > span {
+    text-align: center;
+    width: 100px;
+    font-size: 10px;
+    line-height: 25px;
+    font-weight: bold;
+    // color: var(--group-color);
+    // background: var(--group-background-focus);
+    // border: 1px solid var(--group-border);
+    transition:
+      background 0.3s ease,
+      border 0.3s ease,
+      color 0.3s ease;
+  }
+  &:focus-within {
+    & > span {
+      color: var(--group-color-focus);
+      background: var(--group-background-focus);
+      border-color: var(--group-border-focus);
+    }
+  }
+}

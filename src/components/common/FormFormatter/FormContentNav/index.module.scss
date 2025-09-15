@@ -1,0 +1,31 @@
+.navBar {
+  min-width: 8rem;
+  padding: 1.5rem;
+  padding-bottom: 0;
+}
+
+.navArea {
+  color: #888b8d;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+
+  & > a {
+    cursor: pointer;
+  }
+}
+
+.navItem {
+  cursor: pointer;
+}
+
+.navItem:hover {
+  color: #1b4b58 !important;
+}
+
+.selectedNavItem {
+  border-bottom: solid thin #1b4b58;
+  color: #1b4b58;
+}

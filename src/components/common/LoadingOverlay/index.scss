@@ -1,0 +1,21 @@
+.background {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  height: 100%;
+  z-index: 9998;
+  background-color: #66666666;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.shown {
+  @extend .background;
+  display: grid;
+}
+
+.hidden {
+  @extend .background;
+  display: none;
+}

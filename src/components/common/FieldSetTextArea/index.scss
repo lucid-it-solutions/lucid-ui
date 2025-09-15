@@ -1,0 +1,48 @@
+.fieldsetTextArea {
+  border: solid thin lightgray;
+  border-radius: 3px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  &>legend {
+    font-size: 0.75rem;
+    // color: var(--lightgray);
+    margin: 0 10px;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  &>textarea {
+    border: none;
+    outline: none;
+    width: calc(100% - 20px);
+    padding: 5px 10px 7.5px 10px;
+    font-size: 1rem;
+    resize: none;
+    background-color: transparent;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:disabled {
+      background-color: transparent;
+
+      &::-webkit-input-placeholder {
+        color: white;
+      }
+    }
+  }
+
+  &:has(textarea:disabled) {
+    background-color: transparent;
+
+    border: none;
+
+    & legend::after {
+      content: ":";
+      padding-left: 1px;
+    }
+  }
+}

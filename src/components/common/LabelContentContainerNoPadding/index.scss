@@ -1,0 +1,14 @@
+.labelContentContainerPadding {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-block: 5px;
+  gap: 1rem;
+  min-width: 9rem;
+  height: fit-content;
+}
+
+.labelContentContainerPaddingHeader {
+  font-weight: 600;
+  color: var(--light-primary-color);
+}
