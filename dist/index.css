@@ -10,7 +10,7 @@
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border-width: 0;
 }
@@ -342,7 +342,6 @@
     filter,
     backdrop-filter,
     display,
-    visibility,
     content-visibility,
     overlay,
     pointer-events;
@@ -859,8 +858,6 @@
   cursor: pointer;
   border: solid 1px lightgray;
   color: lightgray;
-  z-index: 1;
-  z-index: unset;
 }
 .toggleContainer > span:first-child {
   border-radius: 3px 0 0 3px;
@@ -872,6 +869,10 @@
   background-color: var(--primary-color);
   color: white;
   border-color: var(--primary-color);
+}
+.toggleContainer > span {
+  z-index: 1;
+  z-index: unset;
 }
 .toggleContainer > span > span {
   position: relative;
@@ -896,10 +897,10 @@
     z-index 0s 500ms,
     color 500ms 0s;
 }
-.toggleContainer[data-disabled=true] {
-}
 .toggleContainer[data-disabled=true] > :not(.disabledLabel) {
   display: none;
+}
+.toggleContainer[data-disabled=true] {
 }
 .disabledLabel {
   padding-left: 10px;
@@ -923,6 +924,8 @@
   cursor: pointer;
   font-size: 0.75rem;
   font-weight: 600;
+}
+.marker {
 }
 .marker:is([data-toggled=false], :not([data-toggled])) {
   right: 0;
@@ -1006,10 +1009,6 @@
   border: none;
   align-items: center;
   line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
 }
 @media (max-width: 648px) {
   .yellowButton {
@@ -1021,6 +1020,12 @@
   .yellowButton :nth-child(2) {
     display: none;
   }
+}
+.yellowButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 
 /* src/components/common/SkeletonSpan/index.scss */
@@ -1342,8 +1347,6 @@
   cursor: pointer;
   border: solid 1px lightgray;
   color: lightgray;
-  z-index: 1;
-  z-index: unset;
 }
 .toggleContainer > span:first-child {
   border-radius: 3px 0 0 3px;
@@ -1355,6 +1358,10 @@
   background-color: var(--primary-color);
   color: white;
   border-color: var(--primary-color);
+}
+.toggleContainer > span {
+  z-index: 1;
+  z-index: unset;
 }
 .toggleContainer > span > span {
   position: relative;
@@ -1835,8 +1842,6 @@
   cursor: pointer;
   border: solid 1px lightgray;
   color: lightgray;
-  z-index: 1;
-  z-index: unset;
 }
 .toggleContainer > span:first-child {
   border-radius: 3px 0 0 3px;
@@ -1848,6 +1853,10 @@
   background-color: var(--primary-color);
   color: white;
   border-color: var(--primary-color);
+}
+.toggleContainer > span {
+  z-index: 1;
+  z-index: unset;
 }
 .toggleContainer > span > span {
   position: relative;
@@ -1872,10 +1881,10 @@
     z-index 0s 500ms,
     color 500ms 0s;
 }
-.toggleContainer[data-disabled=true] {
-}
 .toggleContainer[data-disabled=true] > :not(.disabledLabel) {
   display: none;
+}
+.toggleContainer[data-disabled=true] {
 }
 .disabledLabel {
   padding-left: 10px;
@@ -1899,6 +1908,8 @@
   cursor: pointer;
   font-size: 0.75rem;
   font-weight: 600;
+}
+.marker {
 }
 .marker:is([data-toggled=false], :not([data-toggled])) {
   right: 0;
@@ -2032,8 +2043,6 @@
   cursor: pointer;
   border: solid 1px lightgray;
   color: lightgray;
-  z-index: 1;
-  z-index: unset;
 }
 .toggleContainer > span:first-child {
   border-radius: 3px 0 0 3px;
@@ -2045,6 +2054,10 @@
   background-color: var(--primary-color);
   color: white;
   border-color: var(--primary-color);
+}
+.toggleContainer > span {
+  z-index: 1;
+  z-index: unset;
 }
 .toggleContainer > span > span {
   position: relative;
@@ -2069,10 +2082,10 @@
     z-index 0s 500ms,
     color 500ms 0s;
 }
-.toggleContainer[data-disabled=true] {
-}
 .toggleContainer[data-disabled=true] > :not(.disabledLabel) {
   display: none;
+}
+.toggleContainer[data-disabled=true] {
 }
 .disabledLabel {
   padding-left: 10px;
@@ -2096,6 +2109,8 @@
   cursor: pointer;
   font-size: 0.75rem;
   font-weight: 600;
+}
+.marker {
 }
 .marker:is([data-toggled=false], :not([data-toggled])) {
   right: 0;
@@ -2215,5 +2230,5 @@
   background: var(--group-background-focus);
   border-color: var(--group-border-focus);
 }
-/*! tailwindcss v4.1.12 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
 /*# sourceMappingURL=index.css.map */
