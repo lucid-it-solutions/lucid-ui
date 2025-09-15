@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "./components/ui/button";
-import "./index.css";
+import "./styles/globals.css";
 import { colors, skeletonSizes } from "./values";
 
 export {
