@@ -2920,7 +2920,7 @@ var NavigationBar = (props) => {
         /* @__PURE__ */ jsxs24("div", { className: "account-area", children: [
           /* @__PURE__ */ jsx34("div", { className: "account-dp-container", children: /* @__PURE__ */ jsxs24(Avatar, { children: [
             /* @__PURE__ */ jsx34(AvatarImage, { src: "" }),
-            /* @__PURE__ */ jsx34(AvatarFallback, { children: user?.data.name?.charAt(0) || "U" })
+            /* @__PURE__ */ jsx34(AvatarFallback, { children: user?.firstName?.charAt(0) || "U" })
           ] }) }),
           /* @__PURE__ */ jsx34(FaChevronDown, { size: "0.75rem" })
         ] }),
@@ -10238,19 +10238,101 @@ var sampleLogo = {
   darkMode: "https://via.placeholder.com/160x60/ffffff/000000?text=COMPANY",
   alt: "Company Logo"
 };
+var sampleAdminPermissions = [
+  100,
+  200,
+  300,
+  400,
+  500,
+  600,
+  700,
+  800,
+  900,
+  1e3,
+  1100,
+  1200,
+  1300,
+  1400,
+  1500,
+  1600,
+  1700,
+  1800,
+  1900,
+  2e3,
+  2100,
+  2200,
+  2300,
+  2400,
+  2500,
+  2600,
+  2700,
+  2800,
+  2900,
+  3e3,
+  3500,
+  3600,
+  3700,
+  3800,
+  3900,
+  4e3,
+  4100,
+  4200,
+  4300,
+  4400,
+  4500,
+  4600,
+  4700,
+  4800,
+  4900,
+  5e3,
+  5100,
+  5200,
+  5400,
+  5900,
+  6e3,
+  6300,
+  6400,
+  7100,
+  7200,
+  7300,
+  7500,
+  7700,
+  7800,
+  8100,
+  8400,
+  8700,
+  9100,
+  89001111
+];
+var sampleEmployeePermissions = [
+  4200,
+  4300,
+  4400,
+  4500,
+  4600,
+  4700,
+  4800
+  // Time entry permissions
+];
 var sampleAdminUser = {
-  data: {
-    isAdmin: true,
-    name: "John Admin",
-    email: "john.admin@company.com"
-  }
+  id: 1,
+  username: "john.admin",
+  firstName: "John",
+  lastName: "Admin",
+  userLevelId: 1,
+  userLevel: null,
+  permissions: [...sampleAdminPermissions],
+  email: "john.admin@company.com"
 };
 var sampleEmployeeUser = {
-  data: {
-    isAdmin: false,
-    name: "Jane Employee",
-    email: "jane.employee@company.com"
-  }
+  id: 2,
+  username: "jane.employee",
+  firstName: "Jane",
+  lastName: "Employee",
+  userLevelId: 2,
+  userLevel: null,
+  permissions: [...sampleEmployeePermissions],
+  email: "jane.employee@company.com"
 };
 var sampleUser = sampleAdminUser;
 var sampleAdminRoutes = [
@@ -10800,82 +10882,6 @@ var sampleEmployeeRoutes = [
       }
     ]
   }
-];
-var sampleAdminPermissions = [
-  100,
-  200,
-  300,
-  400,
-  500,
-  600,
-  700,
-  800,
-  900,
-  1e3,
-  1100,
-  1200,
-  1300,
-  1400,
-  1500,
-  1600,
-  1700,
-  1800,
-  1900,
-  2e3,
-  2100,
-  2200,
-  2300,
-  2400,
-  2500,
-  2600,
-  2700,
-  2800,
-  2900,
-  3e3,
-  3500,
-  3600,
-  3700,
-  3800,
-  3900,
-  4e3,
-  4100,
-  4200,
-  4300,
-  4400,
-  4500,
-  4600,
-  4700,
-  4800,
-  4900,
-  5e3,
-  5100,
-  5200,
-  5400,
-  5900,
-  6e3,
-  6300,
-  6400,
-  7100,
-  7200,
-  7300,
-  7500,
-  7700,
-  7800,
-  8100,
-  8400,
-  8700,
-  9100,
-  89001111
-];
-var sampleEmployeePermissions = [
-  4200,
-  4300,
-  4400,
-  4500,
-  4600,
-  4700,
-  4800
-  // Time entry permissions
 ];
 export {
   Avatar,

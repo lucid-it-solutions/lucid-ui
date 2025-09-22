@@ -13,11 +13,34 @@ export interface CompanyLogo {
 }
 
 export interface User {
-  data: {
-    isAdmin: boolean;
-    name?: string;
-    email?: string;
-  };
+  id: number;
+  username: string;
+  firstName: string;
+  lastName: string;
+  userLevelId: number;
+  userLevel: UserLevelSchema | null;
+  permissions: number[] | null;
+  email: string;
+}
+
+export interface UserLevelSchema {
+  id: number;
+  name: string;
+  permissions?: UserLevelPermissionSchema[];
+}
+
+export interface UserLevelPermissionSchema {
+  id: number;
+  userLevelId: number;
+  permissionId: number;
+  permission: PermissionSchema;
+}
+
+export interface PermissionSchema {
+  id: number;
+  name: string;
+  //degree?: number;
+  //permissionGroupId?: number;
 }
 
 export interface NavigationBarProps {

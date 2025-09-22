@@ -156,7 +156,7 @@ export const NavigationBar = (props: NavigationBarProps) => {
                 <Avatar>
                   <AvatarImage src={""} />
                   <AvatarFallback>
-                    {user?.data.name?.charAt(0) || "U"}
+                    {user?.firstName?.charAt(0) || "U"}
                   </AvatarFallback>
                 </Avatar>
               </div>

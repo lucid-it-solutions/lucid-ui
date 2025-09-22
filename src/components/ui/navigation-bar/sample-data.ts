@@ -5,25 +5,51 @@ import { navigationIcons } from "../../../config/images";
 export const sampleLogo: CompanyLogo = {
   src: "https://via.placeholder.com/160x60/0066cc/ffffff?text=COMPANY",
   darkMode: "https://via.placeholder.com/160x60/ffffff/000000?text=COMPANY",
-  alt: "Company Logo"
+  alt: "Company Logo",
 };
+
+// Sample permissions (admin has all permissions from PayPlus)
+export const sampleAdminPermissions: number[] = [
+  100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400,
+  1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700,
+  2800, 2900, 3000, 3500, 3600, 3700, 3800, 3900, 4000, 4100, 4200, 4300, 4400,
+  4500, 4600, 4700, 4800, 4900, 5000, 5100, 5200, 5400, 5900, 6000, 6300, 6400,
+  7100, 7200, 7300, 7500, 7700, 7800, 8100, 8400, 8700, 9100, 89001111,
+];
+
+// Sample permissions for a regular employee (basic time entry and reports)
+export const sampleEmployeePermissions: number[] = [
+  4200,
+  4300,
+  4400,
+  4500,
+  4600,
+  4700,
+  4800, // Time entry permissions
+];
 
 // Sample admin user data
 export const sampleAdminUser: User = {
-  data: {
-    isAdmin: true,
-    name: "John Admin",
-    email: "john.admin@company.com"
-  }
+  id: 1,
+  username: "john.admin",
+  firstName: "John",
+  lastName: "Admin",
+  userLevelId: 1,
+  userLevel: null,
+  permissions: [...sampleAdminPermissions],
+  email: "john.admin@company.com",
 };
 
 // Sample employee user data
 export const sampleEmployeeUser: User = {
-  data: {
-    isAdmin: false,
-    name: "Jane Employee",
-    email: "jane.employee@company.com"
-  }
+  id: 2,
+  username: "jane.employee",
+  firstName: "Jane",
+  lastName: "Employee",
+  userLevelId: 2,
+  userLevel: null,
+  permissions: [...sampleEmployeePermissions],
+  email: "jane.employee@company.com",
 };
 
 // For backward compatibility
@@ -581,17 +607,3 @@ export const sampleEmployeeRoutes: NavRoute[] = [
   },
 ];
 
-// Sample permissions (admin has all permissions from PayPlus)
-export const sampleAdminPermissions: number[] = [
-  100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400,
-  1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600,
-  2700, 2800, 2900, 3000, 3500, 3600, 3700, 3800, 3900, 4000, 4100, 4200,
-  4300, 4400, 4500, 4600, 4700, 4800, 4900, 5000, 5100, 5200, 5400, 5900,
-  6000, 6300, 6400, 7100, 7200, 7300, 7500, 7700, 7800, 8100, 8400, 8700,
-  9100, 89001111
-];
-
-// Sample permissions for a regular employee (basic time entry and reports)
-export const sampleEmployeePermissions: number[] = [
-  4200, 4300, 4400, 4500, 4600, 4700, 4800  // Time entry permissions
-];

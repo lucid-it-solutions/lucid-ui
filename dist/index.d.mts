@@ -331,11 +331,29 @@ interface CompanyLogo {
     alt: string;
 }
 interface User {
-    data: {
-        isAdmin: boolean;
-        name?: string;
-        email?: string;
-    };
+    id: number;
+    username: string;
+    firstName: string;
+    lastName: string;
+    userLevelId: number;
+    userLevel: UserLevelSchema | null;
+    permissions: number[] | null;
+    email: string;
+}
+interface UserLevelSchema {
+    id: number;
+    name: string;
+    permissions?: UserLevelPermissionSchema[];
+}
+interface UserLevelPermissionSchema {
+    id: number;
+    userLevelId: number;
+    permissionId: number;
+    permission: PermissionSchema;
+}
+interface PermissionSchema {
+    id: number;
+    name: string;
 }
 interface NavigationBarProps {
     routes: NavRoute[];
@@ -455,13 +473,13 @@ declare const StepsMaker: (props: StepsMakerProps) => react_jsx_runtime.JSX.Elem
 declare function cn(...inputs: ClassValue[]): string;
 
 declare const sampleLogo: CompanyLogo;
+declare const sampleAdminPermissions: number[];
+declare const sampleEmployeePermissions: number[];
 declare const sampleAdminUser: User;
 declare const sampleEmployeeUser: User;
 declare const sampleUser: User;
 declare const sampleAdminRoutes: NavRoute[];
 declare const sampleEmployeeRoutes: NavRoute[];
-declare const sampleAdminPermissions: number[];
-declare const sampleEmployeePermissions: number[];
 
 declare const images: {
     logo: string;
@@ -497,4 +515,4 @@ declare const navigationIcons: {
     birthday: string;
 };
 
-export { type AttachmentData, Avatar, AvatarFallback, AvatarImage, Button, Command, CommandGroup, CommandItem, CommandList, type CompanyLogo, ContentMargin, Dialog, DialogContent, DialogTrigger, Divider, Combobox as Dropdown, GenericCheckboxFormField as FieldsetCheckboxFormField, DropdownForm as FieldsetDropdownForm, UpgradedFieldsetFormInput as FieldsetFormInput, UpgradedFieldsetFormTextarea as FieldsetFormTextarea, ToggleForm as FieldsetToggleForm, FieldFlexRow as FlexFieldRow, FieldFlexRowWrap as FlexFieldRowWrap, FlexRow, FlexiRowMatrix, FlexiRowMatrixLeftAlign, Form, FormControl, FormField, FormItem, FormMessage, GenericCheckboxGroup, Input, Label, LeftSideUpPart, LoadingOverlay, LoadingOverlayContext, LoadingOverlayProvider, MatrixInput, Modal, ModalDivider, ModalWithOutline, ModeToggle, type NavAreaProps, NavAreaUpdated, type NavRoute, NavigationBar, type NavigationBarProps, type NotificationStatus, NotificationToast, NotificationToastContext, type NotificationToastProps, NotificationToastProvider, Popover, PopoverContent, PopoverTrigger, RightSideDownPart, Search, SideFilterStationary, SideNav, type SideNavProps, SkeletonShad, SkeletonSpan, StepsMaker, SubAcc, type SubAccProps, Table, Textarea, ThemeProvider, Toggle, Upload, UploadButton, type UploadButtonProps, UploadForm, type UploadProps, type User, buttonVariants, cn, comboboxColorVariants, defaultErrorNotificationPayload, images, navigationIcons, payplusAssets, sampleAdminPermissions, sampleAdminRoutes, sampleAdminUser, sampleEmployeePermissions, sampleEmployeeRoutes, sampleEmployeeUser, sampleLogo, sampleUser, toggleColorVariants, uploadButtonVariants, uploadVariants, useOutsideComponentClicker };
+export { type AttachmentData, Avatar, AvatarFallback, AvatarImage, Button, Command, CommandGroup, CommandItem, CommandList, type CompanyLogo, ContentMargin, Dialog, DialogContent, DialogTrigger, Divider, Combobox as Dropdown, GenericCheckboxFormField as FieldsetCheckboxFormField, DropdownForm as FieldsetDropdownForm, UpgradedFieldsetFormInput as FieldsetFormInput, UpgradedFieldsetFormTextarea as FieldsetFormTextarea, ToggleForm as FieldsetToggleForm, FieldFlexRow as FlexFieldRow, FieldFlexRowWrap as FlexFieldRowWrap, FlexRow, FlexiRowMatrix, FlexiRowMatrixLeftAlign, Form, FormControl, FormField, FormItem, FormMessage, GenericCheckboxGroup, Input, Label, LeftSideUpPart, LoadingOverlay, LoadingOverlayContext, LoadingOverlayProvider, MatrixInput, Modal, ModalDivider, ModalWithOutline, ModeToggle, type NavAreaProps, NavAreaUpdated, type NavRoute, NavigationBar, type NavigationBarProps, type NotificationStatus, NotificationToast, NotificationToastContext, type NotificationToastProps, NotificationToastProvider, type PermissionSchema, Popover, PopoverContent, PopoverTrigger, RightSideDownPart, Search, SideFilterStationary, SideNav, type SideNavProps, SkeletonShad, SkeletonSpan, StepsMaker, SubAcc, type SubAccProps, Table, Textarea, ThemeProvider, Toggle, Upload, UploadButton, type UploadButtonProps, UploadForm, type UploadProps, type User, type UserLevelPermissionSchema, type UserLevelSchema, buttonVariants, cn, comboboxColorVariants, defaultErrorNotificationPayload, images, navigationIcons, payplusAssets, sampleAdminPermissions, sampleAdminRoutes, sampleAdminUser, sampleEmployeePermissions, sampleEmployeeRoutes, sampleEmployeeUser, sampleLogo, sampleUser, toggleColorVariants, uploadButtonVariants, uploadVariants, useOutsideComponentClicker };
