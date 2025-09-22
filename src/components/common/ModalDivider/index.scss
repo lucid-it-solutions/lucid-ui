@@ -1,4 +1,4 @@
-.Divider {
+.modal-divider-container {
   display: flex;
   flex-direction: row;
 
@@ -6,14 +6,14 @@
     flex-direction: column;
   }
 }
-.leftSide {
+.modal-divider-left-side {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   gap: 10px;
 }
-.divider {
+.modal-divider-line {
   border-left: 3px solid var(--primary-color);
   border-radius: 5px;
   height: auto;
@@ -30,7 +30,7 @@
   }
 }
 
-.right {
+.modal-divider-right {
   display: flex;
   margin-top: 10px;
   flex-wrap: wrap;

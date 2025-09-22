@@ -1,5 +1,5 @@
 //Side Filter
-.sideFilter {
+.side-filter-stationary {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -21,8 +21,8 @@
   }
 }
 
-.sideFilterHidden {
-  @extend .sideFilter;
+.side-filter-stationary-hidden {
+  @extend .side-filter-stationary;
 
   @media (max-width: 480px) {
     max-height: 1.5rem;
@@ -32,7 +32,7 @@
   }
 }
 
-.filterHeaderArea {
+.side-filter-header-area {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -41,7 +41,7 @@
   color: #353535;
 }
 
-.filterFieldContainer {
+.side-filter-field-container {
   display: flex;
   flex-direction: column;
   // margin-top: 2rem;
@@ -54,8 +54,8 @@
   }
 }
 
-.filterFieldContainerHidden {
-  @extend .filterFieldContainer;
+.side-filter-field-container-hidden {
+  @extend .side-filter-field-container;
 
   @media (max-width: 480px) {
     opacity: 0;
@@ -63,7 +63,7 @@
   }
 }
 
-.hideButton {
+.side-filter-hide-button {
   // right: -1rem;
   // top: 3rem;
   color: #052a38;
@@ -75,17 +75,6 @@
     font-size: 1.3rem;
     font-weight: 600;
     color: #353535;
-  }
-
-  &>.line {
-    flex: 1.5;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    display: none;
-
-    @media (max-width: 480px) {
-      display: block;
-    }
   }
 
   &>.HiddenOnBigScreen {
@@ -105,7 +94,18 @@
   }
 }
 
-.customButton {
+.side-filter-line {
+  flex: 1.5;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: none;
+
+  @media (max-width: 480px) {
+    display: block;
+  }
+}
+
+.side-filter-custom-button {
   min-width: 5.5rem;
   padding: 0.6rem;
   font-size: 1rem;
@@ -128,7 +128,7 @@
   }
 }
 
-.buttonGroup {
+.side-filter-button-group {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;

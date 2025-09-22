@@ -1,6 +1,6 @@
 "use client";
 
-import styles2 from "./index.scss";
+import "./index.scss";
 
 export const ModalDivider = (
   props: React.DetailedHTMLProps<
@@ -9,7 +9,7 @@ export const ModalDivider = (
   >
 ) => {
   const { children } = props;
-  return <div className={styles2.Divider}>{children}</div>;
+  return <div className="modal-divider-container">{children}</div>;
 };
 
 export const LeftSideUpPart = (
@@ -19,7 +19,7 @@ export const LeftSideUpPart = (
   >
 ) => {
   const { children } = props;
-  return <div className={styles2.leftSide}>{children}</div>;
+  return <div className="modal-divider-left-side">{children}</div>;
 };
 
 export interface RightSideDownPartProps
@@ -36,7 +36,7 @@ export const RightSideDownPart = (props: RightSideDownPartProps) => {
     <>
       <div>
         <label style={{ fontWeight: "bold" }}>{header}</label>
-        <div className="right">{children}</div>
+        <div className="modal-divider-right">{children}</div>
       </div>
     </>
   );
@@ -49,7 +49,7 @@ export const Divider = (
   >
 ) => {
   const { children } = props;
-  return <div className={styles2.divider}></div>;
+  return <div className="modal-divider-line"></div>;
 };
 
 export default ModalDivider;

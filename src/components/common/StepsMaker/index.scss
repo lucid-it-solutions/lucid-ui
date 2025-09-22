@@ -1,4 +1,4 @@
-.stepsRow {
+.steps-maker-row {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -9,7 +9,7 @@
   position: relative;
 }
 
-.line {
+.steps-maker-line {
   position: absolute;
   width: 80%;
   top: 2rem;
@@ -19,7 +19,7 @@
   color: #bababa !important;
 }
 
-.stepColumnActive {
+.steps-maker-column-active {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -30,7 +30,7 @@
   transition: 0.2s ease-in;
 }
 
-.stepColumn {
+.steps-maker-column {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -40,7 +40,7 @@
   transition: 0.2s ease-in;
 }
 
-.outerCircle {
+.steps-maker-outer-circle {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
@@ -52,19 +52,19 @@
   transition: 0.2s ease-in;
 }
 
-.smallText {
+.steps-maker-small-text {
   color: #e6e6e6;
   font-size: 1rem;
   display: none;
 }
 
-.columnDiv {
+.steps-maker-column-div {
   display: flex;
   flex-direction: column;
   text-align: left;
 }
 
-.outerCircleActive {
+.steps-maker-outer-circle-active {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
@@ -79,7 +79,7 @@
   transition: 0.2s ease-in;
 }
 
-.innerCircle {
+.steps-maker-inner-circle {
   width: 3.7rem;
   height: 3.7rem;
   border-radius: 50%;
@@ -89,7 +89,7 @@
   justify-content: center;
 }
 
-.innerCircleActive {
+.steps-maker-inner-circle-active {
   width: 3.7rem;
   height: 3.7rem;
   border-radius: 50%;
@@ -99,26 +99,26 @@
   border: solid 3px #d1dbdd;
 }
 
-.number {
+.steps-maker-number {
   font-weight: bold;
   color: #bababa;
 }
 
-.numberActive {
+.steps-maker-number-active {
   font-weight: bold;
   color: #214650;
 }
 
-.label {
+.steps-maker-label {
   color: #bababa;
 }
 
-.labelActive {
+.steps-maker-label-active {
   font-weight: bold;
   color: #214650;
 }
 
-.loadline {
+.steps-maker-loadline {
   z-index: 2;
   display: none;
   font-weight: bold;
@@ -127,25 +127,25 @@
 }
 
 @media (max-width: 850px) {
-  .smallText {
+  .steps-maker-small-text {
     display: block !important;
   }
 
-  .stepColumnActive {
+  .steps-maker-column-active {
     flex-direction: row;
   }
 
-  .stepColumn {
+  .steps-maker-column {
     display: none;
   }
 
-  .line {
+  .steps-maker-line {
     width: 100% !important;
     bottom: 0px !important;
     top: unset;
   }
 
-  .loadline {
+  .steps-maker-loadline {
     display: block;
     position: absolute;
     bottom: 0px !important;
@@ -153,7 +153,7 @@
     left: 0px;
   }
 
-  .stepsRow {
+  .steps-maker-row {
     justify-content: start !important;
   }
 }

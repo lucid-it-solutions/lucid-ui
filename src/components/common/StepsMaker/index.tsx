@@ -2,7 +2,7 @@
 "use client";
 
 import React from "react";
-import styles from "./index.scss";
+import "./index.scss";
 
 export interface StepsMakerProps
   extends React.DetailedHTMLProps<
@@ -18,14 +18,14 @@ const StepsMaker = (props: StepsMakerProps) => {
   const { data = [], stepValue = 0 } = props;
 
   return (
-    <div className="stepRow">
+    <div className="steps-maker-row">
       <hr
         style={data.length > 6 ? { width: "90%" } : { width: "80%" }}
-        className={styles.line}
+        className="steps-maker-line"
       />
 
       <hr
-        className="loadline"
+        className="steps-maker-loadline"
         style={{ width: `${((stepValue + 1) / data.length) * 100}%` }}
       />
       {data.map((x, i) => {
@@ -36,39 +36,39 @@ const StepsMaker = (props: StepsMakerProps) => {
               width: "200px",
               justifyContent: "start",
             }}
-            className={stepValue == i ? "stepColumnActive" : "stepColumn"}
+            className={stepValue == i ? "steps-maker-column-active" : "steps-maker-column"}
           >
             <div
               className={`${
                 stepValue == i
-                  ? "outerCircleActive" + ` dark:border-white`
-                  : "outerCircle" + " dark:border-primary"
+                  ? "steps-maker-outer-circle-active" + ` dark:border-white`
+                  : "steps-maker-outer-circle" + " dark:border-primary"
               } dark:bg-primary`}
             >
               <div
                 className={`${
-                  stepValue == i ? "innerCircleActive" : "innerCircle"
+                  stepValue == i ? "steps-maker-inner-circle-active" : "steps-maker-inner-circle"
                 } dark:border-black`}
               >
                 <h1
                   className={`${
                     stepValue == i
-                      ? "numberActive" + " dark:text-white"
-                      : "number"
+                      ? "steps-maker-number-active" + " dark:text-white"
+                      : "steps-maker-number"
                   } `}
                 >
                   {i + 1}
                 </h1>
               </div>
             </div>
-            <div className="columnDiv">
-              <p className="smallText">
+            <div className="steps-maker-column-div">
+              <p className="steps-maker-small-text">
                 Step {i + 1} of {data.length}
               </p>
               <p
                 style={{ textAlign: "center" }}
                 className={
-                  stepValue == i ? "labelActive" + " dark:text-white" : "label"
+                  stepValue == i ? "steps-maker-label-active" + " dark:text-white" : "steps-maker-label"
                 }
               >
                 {data[i]}

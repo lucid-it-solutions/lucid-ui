@@ -1,6 +1,6 @@
 import { FaChevronCircleDown, FaChevronCircleUp } from "react-icons/fa";
 
-import styles from "./index.scss";
+import "./index.scss";
 
 export const SideFilterStationary = (props: any) => {
   const {
@@ -14,12 +14,12 @@ export const SideFilterStationary = (props: any) => {
   return (
     <div
       className={`${
-        isOpen ? "sideFilter" : "sideFilterHidden2"
+        isOpen ? "side-filter-stationary" : "side-filter-stationary-hidden"
       } dark:bg-primary`}
     >
-      <div className={styles.hideButton} onClick={toggleSideNav}>
+      <div className="side-filter-hide-button" onClick={toggleSideNav}>
         <div className="dark:text-white">{header}</div>
-        <hr className={styles.line} />
+        <hr className="side-filter-line" />
         {isOpen ? (
           <FaChevronCircleUp size="1.3rem" className="hiddenOnBigScreen" />
         ) : (
@@ -29,7 +29,7 @@ export const SideFilterStationary = (props: any) => {
 
       <div
         className={
-          isOpen ? "filterFieldContainer" : "filterFieldContainerHidden"
+          isOpen ? "side-filter-field-container" : "side-filter-field-container-hidden"
         }
       >
         {children}

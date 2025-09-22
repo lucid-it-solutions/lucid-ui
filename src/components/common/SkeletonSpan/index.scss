@@ -1,4 +1,4 @@
-.skeleton {
+.skeleton-span {
   overflow: hidden;
   position: relative;
   overflow: hidden;
@@ -18,11 +18,11 @@
         rgba(#fff, 0.2) 20%,
         rgba(#fff, 0.5) 60%,
         rgba(#fff, 0));
-    animation: shimmer 2s infinite;
+    animation: skeleton-span-shimmer 2s infinite;
     content: '';
   }
 
-  @keyframes shimmer {
+  @keyframes skeleton-span-shimmer {
     100% {
       transform: translateX(100%);
     }

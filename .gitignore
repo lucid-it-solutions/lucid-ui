@@ -1,24 +1,27 @@
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# Node modules
+node_modules/
 
-# build outputs
-/build
+# Build output
 
-# misc
-.DS_Store
-.env
-.env.local
-.env.*.local
-
-# log files
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
 
-# editor
-.idea
-.vscode
-*.swp
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Env
+.env
+.env.*
+
+# Misc
+*.local
+
+*storybook.log
+storybook-static

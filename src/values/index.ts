@@ -1,2 +1,5 @@
-export { default as colors } from "./colors";
-export { default as skeletonSizes } from "./skeleton";
+export const skeletonSizes = {
+  small: "25%",
+  medium: "50%",
+  wide: "100%"
+} as const;

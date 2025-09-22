@@ -1,7 +1,7 @@
 "use client";
 import { HTMLAttributes } from "react";
-import styles from "./index.module.scss";
-import { cn } from "@/lib/utils";
+import "./index.scss";
+import { cn } from "../../../lib/utils";
 
 export type ModalSize = "small" | "medium" | "medium2" | "large" | "xlarge";
 
@@ -23,21 +23,21 @@ const ModalWithOutline = ({
   return (
     <>
       {show ? (
-        <div className={cn("modalBackground", "h-full")} role="modal-bg">
+        <div className={cn("modal-outline-background", "h-full")} role="modal-bg">
           <div
-            className={cn("modalContainer", "bg-background")}
+            className={cn("modal-outline-container", "bg-background")}
             {...rest}
             //open={show}
             {...modalSize}
           >
             {/* Header Container */}
-            <div className="modalHeaderContainer">
-              <span className={cn("modalHeader", "text-foreground")}>
+            <div className="modal-outline-header-container">
+              <span className={cn("modal-outline-header", "text-foreground")}>
                 {header}
               </span>
             </div>
             {/* Content */}
-            <div className={"contentContainer"}>{children}</div>
+            <div className={"modal-outline-content-container"}>{children}</div>
             {/* Footer Cntainer */}
           </div>
         </div>
